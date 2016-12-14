@@ -1,1 +1,23 @@
+Nationally Consistent Data Measures (NCDMs) for temperature were calculated using two datasets, described below.  The CDC’s NCDMs were:
+1. Days over 90, 95, 100, and 105F
+2. Days over the 90th, 95th, and 98th percentiles of May-Sep max temperature
 
+Two datasets were used NCDM calculations. One modeled (NLDAS2) and one obserbed (GHCN).
+
+## NLDAS
+The NLDAS forcing dataset provides hourly gridded temperature and absolute humidity data at 1/8th degree spatial resolution.  This is the dataset currently used by CDC for their temperature and heat index measures, and we are using it for consistency.  These data were downloaded for New Mexico for 1981-Sep 2016 and processed into daily minimum and maximum air temperature, heat index, and apparent temperature.
+
+To calculate NCDMs using NLDAS, I:
+1. Calculated temperature percentiles for May-Sep 1981-2010.
+2. Calculated the number of days over the various thresholds for each year.
+3. Sampled data (spatial average) by census tract.  Census tract values were then weighted by population and aggregated into counties or small areas.
+
+
+## GHCN
+To compare NLDAS data with station measurements, I used daily temperature data from the GHCN (described in ‘past_climate_station_data.docx’) to calculate NCDMs.  There were no humidity data, so heat index and apparent temperature were not calculated (although humidity is generally so low in New Mexico that summer heat indices are lower than air temperatures).
+
+To calculate NCDMs using GHCN, I:
+1. Calculated temperature percentiles for May-Sep 1981-2010.  Only stations with >75% data coverage for this period were included in percentile calculations.
+2. Calculated the number of days over the various thresholds for each year.  Only stations with >90% data coverage in a given year were included in that year.  Typically there were 50-70 stations each year with good data.
+3. For each temperature threshold, used regression kriging to interpolate station values into a continuous map across the state.  Covariates were latitude and elevation.
+4. Calculated spatial averages of interpolated data by census tract.  Census tract values were then weighted by population and aggregated into counties or small areas.
