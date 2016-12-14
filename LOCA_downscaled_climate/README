@@ -1,1 +1,23 @@
+##Objective:
+To compare present day climate to future climate in terms of potential health impacts (e.g. heat intensity and duration, drought intensity and duration, fire risk).
 
+
+##Background:
+This folder contains downscaled CMIP5 climate projections for New Mexico for three 20-year periods, which are commonly used for assessing climate change impacts: 
+
+(1) Historical/present	1986-2005
+(2) Mid-century	2040-2059
+(3) Late-century	2080-2099
+
+The variables currently available are daily minimum and maximum temperature, and daily precipitation. For more information visit: http://loca.ucsd.edu/
+
+These data are from the LOCA (localized constructed analogs) dataset.  LOCA is a statistical downscaling technique that uses local climate history to add improved fine-scale spatial detail to global climate models. Most global climate model (also called GCMs…general circulation models) outputs are at 1 degree of spatial resolution, which provides ~111 km resolutions cells.  LOCA has downscaled 28 global climate models from the CMIP5 archive at a 1/16th degree spatial resolution (~7 km cells), covering North America from central Mexico through Southern Canada.  There are many downscaling techniques, but LOCA seems to be a well validated one.  The data in this folder have been clipped to New Mexico and are in netcdf format.
+
+
+##Analysis
+We have daily projections from 28 climate models at a resolution of 1/16th degree.  Crunch numbers for each and put into a distribution to get mean, median projections.  Interested in:
+-days over 90, 95, 100°F
+-longest stretch of days over 100°F
+-nights over 80°F
+-number consecutive nights over 80°F
+-current vs future frequency of NWS heat advisories (assuming advisory criteria remain the same)
