@@ -1,0 +1,9 @@
+##Objective:
+To generate a first-order estimate of the potential effects of climate change on annual wildfire acreage.
+
+
+##Methods:
+Fire history data for New Mexico from 1980 to 2015 were obtained from:  http://wildfire.cr.usgs.gov/firehistory/data.html.  These were used in conjunction with GHCN daily temperature and precipitation data from the same time period for 63 New Mexico weather stations that had >95% data coverage for the study period to test relationships between weather and annual acres burned.
+
+After models were developed, future climate projections from LOCA were used to estimate future burn acreage (climatic drivers only...no modification of fuels or ignition sources).
+
